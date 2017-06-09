@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#sidebar {
+  position: absolute;
+  top: 0; right: 75%; bottom: 0; left: 0;
+  background-color: rgba(25, 25, 25, 0.1);
+}
+
+#sidebar #chat-rooms {
+  width: 80%;
+  margin: 2rem auto;
+}
+
+#sidebar #chat-rooms h1 {
+  font-family: 'Roboto:700', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+#sidebar #chat-rooms li {
+  font-family: 'Roboto:400', sans-serif;
+  color: gray;
+  list-style: none;
+  padding: 0.5rem 0;
+}
