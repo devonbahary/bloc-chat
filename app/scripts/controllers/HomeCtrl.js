@@ -1,5 +1,5 @@
 (function() {
-  function HomeCtrl($scope, Room) {
+  function HomeCtrl($scope, Room, $uibModal) {
     /*
      * @desc The $firebaseArray Rooms database from the 'Room' service
      * @type {Object}
@@ -7,18 +7,20 @@
     $scope.rooms = Room.all;
 
     /*
-     * @func createRoom
-     * @desc Creates a new room object and adds it to the 'Room.all' database
+     * @func openModal
+     * @desc Opens up a modal for new room creation
     */
-    $scope.createRoom = function() {
-      var newRoom = {};
-      var roomNumber = Room.all.length + 1;
-      newRoom["room" + roomNumber] = "room" + roomNumber;
-      Room.add(newRoom);
-    }
+    $scope.openModal = function() {
+      var modal = $uibModal.open({
+        templateUrl: '/templates/modal.html',
+        controller: 'ModalCtrl',
+        controllerAs: 'modal',
+        backdropClass: 'backdrop'
+      });
+    };
   }
 
   angular
     .module('blocChat')
-    .controller('HomeCtrl', ['$scope', 'Room', HomeCtrl]);
+    .controller('HomeCtrl', ['$scope', 'Room', '$uibModal', HomeCtrl]);
 })();
