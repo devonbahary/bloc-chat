@@ -12,10 +12,12 @@
     */
     $scope.openModal = function() {
       var modal = $uibModal.open({
+        ariaLabeledBy: 'modal-title',
+        ariaDescribedBy: 'modal-body',
         templateUrl: '/templates/modal.html',
         controller: 'ModalCtrl',
         controllerAs: 'modal',
-        backdropClass: 'backdrop'
+        size: 'sm'
       });
     };
   }

@@ -1,9 +1,8 @@
-<aside id="sidebar">
-  <div id="chat-rooms">
-    <h1>Bloc Chat</h1>
-    <ul>
-      <li ng-repeat="room in rooms">Room {{ $index + 1 }}</li>
-    </ul>
-  </div>
-  <div id="new-room" ng-click="openModal()">New room</div>
+<aside class="container col-md-4 sidebar">
+  <h1>Bloc Chat</h1>
+  <button type="button" class="btn btn-primary new-room-button"
+          ng-click="openModal()">New room</button>
+  <ul>
+    <li ng-repeat="room in rooms"><h4>{{ room.$value }}</h4></li>
+  </ul>
 </aside>

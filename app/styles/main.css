@@ -1,81 +1,25 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
-#sidebar {
-  position: absolute;
-  top: 0; right: 75%; bottom: 0; left: 0;
+.sidebar {
   background-color: rgba(25, 25, 25, 0.1);
+  height: 100vh;
 }
 
-#sidebar #chat-rooms {
-  width: 80%;
-  margin: 2rem auto;
+.sidebar h1 { display: inline-block; }
+.sidebar h4 { color: gray; }
+.sidebar li { list-style: none; }
+
+.new-room-button {
+  float: right;
+  margin-top: 2rem;
+  padding-left: 3rem; padding-right: 3rem;
+  transition: all 0.2s ease-out;
 }
 
-#sidebar #chat-rooms h1 {
-  font-family: 'Roboto:700', sans-serif;
-  font-size: 2rem;
-  margin-bottom: 1rem;
+.new-room-button:active {
+  -webkit-transform: translateY(6px);
+      -ms-transform: translateY(6px);
+          transform: translateY(6px);
 }
 
-#sidebar #chat-rooms li {
-  font-family: 'Roboto:400', sans-serif;
+.modal-body p {
   color: gray;
-  list-style: none;
-  padding: 0.5rem 0;
-}
-
-#sidebar #new-room {
-  /* font */
-  font-family: 'Roboto:400', sans-serif;
-  font-size: 0.8rem;
-  color: gray;
-  /* dimensions */
-  position: absolute;
-  top: 2rem; right: 10%;
-  height: 2rem;
-  padding: 0 24px;
-  line-height: 2rem;
-  background-color: rgba(255, 255, 255, 0.9);
-  box-shadow: 1px 1px gray;
-  border-radius: 3px;
-  /* effects */
-  -webkit-transition: all 0.05s ease-out;
-     -moz-transition: all 0.05s ease-out;
-          transition: all 0.05s ease-out;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  cursor: pointer;
-}
-
-#sidebar #new-room:hover {
-  -webkit-transform: translateY(2px);
-      -ms-transform: translateY(2px);
-          transform: translateY(2px);
-}
-
-#sidebar #new-room:active {
-  -webkit-transform: translateY(4px);
-      -ms-transform: translateY(4px);
-          transform: translateY(4px);
-}
-
-#modal {
-  position: absolute;
-  font-family: 'Roboto:400', sans-serif;
-  height: 50%;
-  width: 30%;
-  top: 25%;
-  left: 35%;
-  background-color: rgba(25, 25, 25, 0.2);
-  border-radius: 3px;
-  padding: 2rem;
-}
-
-#modal h2 {
-  padding-bottom: 0.5rem;
 }

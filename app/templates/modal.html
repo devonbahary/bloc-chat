@@ -1,7 +1,21 @@
-<section id="modal">
+<!--<section id="modal">
   <h2>Create new room</h2>
   <p>Enter a room name:</p>
   <input type='text'>
   <button ng-click="modal.closeModal()">Cancel</button>
   <button ng-click="modal.createRoom()">Create room</button>
-</section>
+</section>-->
+
+<form ng-submit="modal.createRoom(roomName)">
+  <div class="modal-header">
+    <h3 class="modal-title" id='modal-title'>Create new room</h3>
+  </div>
+  <div class="modal-body form-group" id='modal-body'>
+    <label for="roomName">Enter a room name:</label>
+    <input type='text' class="form-control" ng-model='roomName' placeholder="Room Name" required>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-default" ng-click="modal.closeModal()">Cancel</button>
+    <input type='submit' class="btn btn-primary" value="Create Room">
+  </div>
+</form>
