@@ -4,8 +4,12 @@
 }
 
 .sidebar h1 { display: inline-block; }
-.sidebar h4 { color: gray; }
 .sidebar li { list-style: none; }
+.sidebar .room-name { cursor: pointer; }
+.sidebar h4 {
+  display: inline-block;
+  color: gray;
+}
 
 .new-room-button {
   float: right;
@@ -22,4 +26,17 @@
 
 .modal-body p {
   color: gray;
+}
+
+.message-row-0 {
+  background-color: rgba(65, 125, 190, 0.2);
+}
+
+.message-row-1 {
+  background-color: rgba(65, 125, 190, 0.1);
+}
+
+.list-group-item .time {
+  float: right;
+  font-style: italic;
 }

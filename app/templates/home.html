@@ -1,8 +1,24 @@
+<!-- Room navigation -->
 <aside class="container col-md-4 sidebar">
   <h1>Bloc Chat</h1>
   <button type="button" class="btn btn-primary new-room-button"
           ng-click="openModal()">New room</button>
   <ul>
-    <li ng-repeat="room in rooms"><h4>{{ room.$value }}</h4></li>
+    <li ng-repeat="room in rooms">
+      <h4 class="room-name" ng-click="activateRoom(room)">{{ room.$value }}</h4>
+    </li>
   </ul>
 </aside>
+
+<!-- Message view -->
+<main class="container col-md-8 messages-container">
+  <h2>{{ activeRoom.$value }}</h2>
+  <ul class="list-group">
+    <li class="list-group-item message-row-{{ $index % 2 }}"
+        ng-repeat="message in roomMessages">
+      <p class="time">{{ message.sentAt }}</p>
+      <strong>{{ message.username }}</strong> <br>
+      {{ message.content }}
+    </li>
+  </ul>
+</main>
