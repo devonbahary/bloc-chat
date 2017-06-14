@@ -1,17 +1,20 @@
 (function() {
-  function UsernameCtrl($uibModalInstance) {
+  function UsernameCtrl($uibModalInstance, $cookies) {
     /*
      * @func setUsername
-     * @desc Sets the username
+     * @desc Puts 'username' into cookies on browser
      * @param {String}
     */
     this.setUsername = function(username) {
-      alert(username + "!");
-      $uibModalInstance.close();
+      // determine if username contains characters
+      if (username.trim().length > 0) {
+        $cookies.put('blocChatCurrentUser', username);
+        $uibModalInstance.close();
+      }
     }
   }
 
   angular
     .module('blocChat')
-    .controller('UsernameCtrl', ['$uibModalInstance', UsernameCtrl]);
+    .controller('UsernameCtrl', ['$uibModalInstance', '$cookies', UsernameCtrl]);
 })();
