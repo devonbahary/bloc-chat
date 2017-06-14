@@ -17,7 +17,16 @@
     Message.getByRoomId = function(roomId) {
       var query = ref.orderByChild('roomId').equalTo(roomId);
       return $firebaseArray(query);
-    }
+    };
+
+    /*
+     * @func send
+     * @desc Submits 'message' object to the Firebase server
+     * @param {Object}
+    */
+    Message.send = function(message) {
+
+    };
 
     return Message;
   }

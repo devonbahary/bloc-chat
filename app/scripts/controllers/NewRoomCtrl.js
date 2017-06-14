@@ -14,9 +14,11 @@
      * @desc Creates a new room object and adds it to the 'Room.all' database
     */
     this.createRoom = function(roomName) {
-      var newRoom = { "$value": roomName };
-      Room.add(newRoom);
-      this.closeModal();
+      if (roomName.trim().length > 0) {
+        var newRoom = { "$value": roomName };
+        Room.add(newRoom);
+        this.closeModal();
+      }
     }
   }
 

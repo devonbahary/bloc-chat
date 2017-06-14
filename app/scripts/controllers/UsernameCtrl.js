@@ -10,9 +10,9 @@
       if (username.trim().length > 0) {
         $cookies.put('blocChatCurrentUser', username);
         $uibModalInstance.close();
-        // $cookies.remove('blocChatCurrentUser');
+        $cookies.remove('blocChatCurrentUser');
       }
-    }
+    };
   }
 
   angular
