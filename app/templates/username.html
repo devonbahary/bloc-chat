@@ -1,0 +1,12 @@
+<form ng-submit="modal.setUsername(username)">
+  <div class="modal-header">
+    <h3 class="modal-title" id='modal-title'>Set a username</h3>
+  </div>
+  <div class="modal-body form-group" id='modal-body'>
+    <label for="username">This name will appear when you send messages</label>
+    <input type='text' class="form-control" ng-model='username' placeholder="username" required>
+  </div>
+  <div class="modal-footer">
+    <input type='submit' class="btn btn-primary form-control" value="Set username">
+  </div>
+</form>

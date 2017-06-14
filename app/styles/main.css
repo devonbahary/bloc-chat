@@ -24,9 +24,7 @@
           transform: translateY(6px);
 }
 
-.modal-body p {
-  color: gray;
-}
+.modal-body label { color: gray; }
 
 .message-row-0 {
   background-color: rgba(65, 125, 190, 0.2);

@@ -33,11 +33,11 @@
      * @desc Opens up a modal for new room creation
     */
     $scope.openModal = function() {
-      var modal = $uibModal.open({
+      modal = $uibModal.open({
         ariaLabeledBy: 'modal-title',
         ariaDescribedBy: 'modal-body',
-        templateUrl: '/templates/modal.html',
-        controller: 'ModalCtrl',
+        templateUrl: '/templates/newRoom.html',
+        controller: 'NewRoomCtrl',
         controllerAs: 'modal',
         size: 'sm'
       });
