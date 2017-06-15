@@ -38,3 +38,26 @@
   float: right;
   font-style: italic;
 }
+
+.messages-container {
+  height: 100vh;
+}
+
+.message-submission {
+  position: absolute;
+  bottom: 0; right: 0; left: 0;
+  padding: 4px 12px;
+}
+
+.message-submission hr {
+  margin: 12px 0;
+}
+.message-input {
+  display: inline-block;
+  width: 90%;
+}
+
+.btn-send {
+  float: right;
+  width: 10%;
+}

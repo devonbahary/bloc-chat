@@ -1,6 +1,26 @@
 (function() {
   function HomeCtrl($scope, Room, Message, $uibModal) {
     /*
+     * @func getTime
+     * @desc Returns a string of the current time
+    */
+    var getTime = function() {
+      var timeString = '';
+      var time = new Date();
+      var hours = time.getHours();
+      var minutes = time.getMinutes();
+      var pmFlag = false;
+      if (hours > 12) {
+        hours -= 12;
+        pmFlag = true;
+      }
+      timeString += hours + ':';
+      timeString += minutes;
+      pmFlag ? timeString += 'pm' : timeString += 'am';
+      return timeString;
+    }
+
+    /*
      * @desc The $firebaseArray Rooms database from the 'Room' service
      * @type {Object}
     */
@@ -42,6 +62,19 @@
         size: 'sm'
       });
     };
+
+    $scope.sendMessage = function(messageContent) {
+      if ($scope.activeRoom) {
+        /*
+        var message = {};
+        message.content = messageContent;
+        message.roomId = $scope.activeRoom;
+        message.sentAt = getTime();
+        message.username = $cookies.get('blocChatCurrentUser');
+        alert(message);
+        // Message.send(message);*/
+      }
+    }
   }
 
   angular

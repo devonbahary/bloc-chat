@@ -21,4 +21,13 @@
       {{ message.content }}
     </li>
   </ul>
+
+  <!-- Message submission -->
+  <footer class="message-submission">
+    <hr>
+    <form ng-submit="sendMessage(message)">
+      <input type="text" class="form-control message-input" ng-model="message" placeholder="Hey, what's up?" required>
+      <input type="submit" class="btn btn-primary btn-send" value="Send">
+    </form>
+  </footer>
 </main>

@@ -25,7 +25,13 @@
      * @param {Object}
     */
     Message.send = function(message) {
-
+      messages.$add(message);
+      /*
+        content
+        roomId
+        sentAt
+        username
+      */
     };
 
     return Message;
