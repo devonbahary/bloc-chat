@@ -10,7 +10,6 @@
       if (username.trim().length > 0) {
         $cookies.put('blocChatCurrentUser', username);
         $uibModalInstance.close();
-        $cookies.remove('blocChatCurrentUser');
       }
     };
   }

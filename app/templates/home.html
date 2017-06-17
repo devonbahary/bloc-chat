@@ -2,7 +2,7 @@
 <aside class="container col-md-4 sidebar">
   <h1>Bloc Chat</h1>
   <button type="button" class="btn btn-primary new-room-button"
-          ng-click="openModal()">New room</button>
+          ng-click="newRoom()">New room</button>
   <ul>
     <li ng-repeat="room in rooms">
       <h4 class="room-name" ng-click="activateRoom(room)">{{ room.$value }}</h4>
@@ -12,20 +12,22 @@
 
 <!-- Message view -->
 <main class="container col-md-8 messages-container">
-  <h2>{{ activeRoom.$value }}</h2>
-  <ul class="list-group">
-    <li class="list-group-item message-row-{{ $index % 2 }}"
-        ng-repeat="message in roomMessages">
-      <p class="time">{{ message.sentAt }}</p>
-      <strong>{{ message.username }}</strong> <br>
-      {{ message.content }}
-    </li>
-  </ul>
+  <section class="messages">
+    <h2>{{ activeRoom.$value }}</h2>
+    <ul class="list-group">
+      <li class="list-group-item message-row-{{ $index % 2 }}"
+          ng-repeat="message in roomMessages">
+        <p class="time">{{ message.sentAt }}</p>
+        <strong>{{ message.username }}</strong> <br>
+        {{ message.content }}
+      </li>
+    </ul>
+  </section>
 
   <!-- Message submission -->
   <footer class="message-submission">
     <hr>
-    <form ng-submit="sendMessage(message)">
+    <form ng-submit="sendMessage(message); message = ''">
       <input type="text" class="form-control message-input" ng-model="message" placeholder="Hey, what's up?" required>
       <input type="submit" class="btn btn-primary btn-send" value="Send">
     </form>

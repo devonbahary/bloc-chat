@@ -43,15 +43,19 @@
   height: 100vh;
 }
 
+.messages {
+  height: 90vh;
+  overflow-y: scroll;
+}
+
 .message-submission {
   position: absolute;
   bottom: 0; right: 0; left: 0;
   padding: 4px 12px;
 }
 
-.message-submission hr {
-  margin: 12px 0;
-}
+.message-submission hr { margin: 12px 0; }
+
 .message-input {
   display: inline-block;
   width: 90%;

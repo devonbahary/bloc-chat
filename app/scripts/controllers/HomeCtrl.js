@@ -1,5 +1,5 @@
 (function() {
-  function HomeCtrl($scope, Room, Message, $uibModal) {
+  function HomeCtrl($scope, Room, Message, $uibModal, $cookies) {
     /*
      * @func getTime
      * @desc Returns a string of the current time
@@ -15,6 +15,9 @@
         pmFlag = true;
       }
       timeString += hours + ':';
+      if (minutes < 10) {
+        timeString += '0';
+      }
       timeString += minutes;
       pmFlag ? timeString += 'pm' : timeString += 'am';
       return timeString;
@@ -49,11 +52,11 @@
     }
 
     /*
-     * @func openModal
+     * @func newRoom
      * @desc Opens up a modal for new room creation
     */
-    $scope.openModal = function() {
-      modal = $uibModal.open({
+    $scope.newRoom = function() {
+      $uibModal.open({
         ariaLabeledBy: 'modal-title',
         ariaDescribedBy: 'modal-body',
         templateUrl: '/templates/newRoom.html',
@@ -63,21 +66,25 @@
       });
     };
 
+    /*
+     * @func sendMessage
+     * @desc Takes in the 'messageContent' string and builds a Message object
+     * to send to the Message service
+     * @param {String}
+    */
     $scope.sendMessage = function(messageContent) {
       if ($scope.activeRoom) {
-        /*
         var message = {};
         message.content = messageContent;
-        message.roomId = $scope.activeRoom;
+        message.roomId = $scope.activeRoom.$id;
         message.sentAt = getTime();
         message.username = $cookies.get('blocChatCurrentUser');
-        alert(message);
-        // Message.send(message);*/
+        Message.send(message);
       }
     }
   }
 
   angular
     .module('blocChat')
-    .controller('HomeCtrl', ['$scope', 'Room', 'Message', '$uibModal', HomeCtrl]);
+    .controller('HomeCtrl', ['$scope', 'Room', 'Message', '$uibModal', '$cookies', HomeCtrl]);
 })();
